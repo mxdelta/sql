@@ -43,7 +43,15 @@ FULL JOIN and CROSS JOIN (отредактировано)
 Информация о системе в txt-файле:
 
         дистрибутив;
-        версия ядра и разрядность;
+            cat /etc/issue
+           cat /etc/*-release
+       версия ядра и разрядность;
+                   cat /proc/version
+                 uname -a
+                  uname -mrs
+                    rpm -q kernel
+                   dmesg | grep Linux
+                    ls /boot | grep vmlinuz-
         информация о сетевом интерфейсе;
         табличка iptables;
         первые 5 сервисов с рут-правами.
