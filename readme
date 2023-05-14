@@ -34,3 +34,9 @@ SQL
 **********************************************************
 Select tabl1.col1, tabl2.col1 from tabl1 INNER JOIN tabl2 on id(tabl1)=id(tabl2)Select tabl1.col1, tabl2.col1 from tabl1 OUTER LEFT JOIN tabl2 on id(tabl1)=id(tabl2)
 FULL JOIN and CROSS JOIN (отредактировано) 
+
+
+{{[]."-alert`xxx`-"}}
+
+
+
