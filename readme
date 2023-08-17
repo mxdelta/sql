@@ -39,7 +39,7 @@ FULL JOIN and CROSS JOIN (отредактировано)
 {{[]."-alert`xxx`-"}}
 
 ***********
-
+# Подключение к mysql server
 mysql -h 123.123.131.131 -u root
 
 SHOW databases; : Prints out the databases we can access.
