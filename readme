@@ -52,4 +52,7 @@ SELECT * FROM {table_name}; : Prints out all the data from the table {table_name
 # Подключение к БД windows microsoft sql service
 impacket-mssqlclient ARCHETYPE/sql_svc@10.129.21.3 -windows-auth
 
+# mongodb
+mongo --port 27117 ace --eval "db.admin.find().forEach(printjson);"
+
 
