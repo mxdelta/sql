@@ -49,6 +49,8 @@ SHOW tables; : Prints out the available tables inside the current
 database.
 SELECT * FROM {table_name}; : Prints out all the data from the table {table_name}.
 
+update {database_name} set {user_pass} = MD5('password123') where ID = 1;
+
 # Подключение к mysql из нутри
 
 mysql --host=db --user=root --password=root cacti -e "show tables"
