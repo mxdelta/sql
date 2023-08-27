@@ -54,6 +54,8 @@ SELECT * FROM {table_name}; : Prints out all the data from the table {table_name
 mysql --host=db --user=root --password=root cacti -e "show tables"
 mysql --host=db --user=root --password=root cacti -e "select * from user_auth"
 
+mysql --user=root -p 
+
 # Подключение к БД windows microsoft sql service
 impacket-mssqlclient ARCHETYPE/sql_svc@10.129.21.3 -windows-auth
 
