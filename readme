@@ -46,7 +46,7 @@ FULL JOIN and CROSS JOIN (отредактировано)
 
 ***********
 # Подключение к mysql server
-mysql -h 123.123.131.131 -u root
+mysql -h 123.123.131.131 -u root -p
 
 SHOW databases; : Prints out the databases we can access.
 USE {database_name}; : Set to use the database named {database_name}.
