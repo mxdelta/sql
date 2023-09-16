@@ -76,3 +76,9 @@ mongo --port 27117 ace --eval 'db.admin.update({"_id":ObjectId("61ce278f46e0fb00
 
 mongo mongodb://10.129.142.102:27017
 
+show dbs;
+use {dbs_name};
+show collections;
+show tables;
+
+db.{collect_name}.find();
