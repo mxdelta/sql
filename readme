@@ -81,4 +81,4 @@ use {dbs_name};
 show collections;
 show tables;
 
-db.{collect_name}.find();
+db.{collect_name}.find().pretty();
