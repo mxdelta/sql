@@ -82,3 +82,17 @@ show collections;
 show tables;
 
 db.{collect_name}.find().pretty();
+
+# postgres
+
+psql -U christine -h localhost -p 4444
+
+\l - список таблиц
+
+\с - конект с таблицей
+
+\dt - выгрузить таблицу
+
+select * from flag; - и так понятно
+
+
