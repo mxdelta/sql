@@ -76,6 +76,11 @@ impacket-getTGT scrm.local/sqlsvc:Pegasus60
 
 export KRB5CCNAME=sqlsvc.ccache
 
+или по TGS - также но с генерацией TGS
+
+enable_xp_cmdshell
+xp_cmdshell
+
 
 # mongodb
 mongo --port 27117 ace --eval "db.admin.find().forEach(printjson);"
