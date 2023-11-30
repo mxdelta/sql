@@ -66,7 +66,16 @@ mysql --host=db --user=root --password=root cacti -e "select * from user_auth"
 mysql --user=root -p 
 
 # Подключение к БД windows microsoft sql service
+
 impacket-mssqlclient ARCHETYPE/sql_svc@10.129.21.3 -windows-auth
+
+impacket-mssqlclient dc1.scrm.local -k (по керберосу)
+---перед этим 
+
+impacket-getTGT scrm.local/sqlsvc:Pegasus60
+
+export KRB5CCNAME=sqlsvc.ccache
+
 
 # mongodb
 mongo --port 27117 ace --eval "db.admin.find().forEach(printjson);"
