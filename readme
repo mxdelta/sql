@@ -65,7 +65,7 @@ mysql --host=db --user=root --password=root cacti -e "select * from user_auth"
 
 mysql --user=root -p 
 
-# Подключение к БД windows microsoft sql service
+# Подключение к БД windows microsoft sql service (MSSQL)
 
 impacket-mssqlclient ARCHETYPE/sql_svc@10.129.21.3 -windows-auth
 
@@ -80,6 +80,14 @@ export KRB5CCNAME=sqlsvc.ccache
 
 enable_xp_cmdshell
 xp_cmdshell
+
+********************
+select name from sys.databases;  (перечислить все базы данных)
+
+select TABLE_NAME from ScrambleHR.INFORMATION_SCHEMA.TABLES;
+
+select * from ScrambleHR.dbo.Employees; (выбрать все из таблицы ScramblerHR)
+
 
 
 # mongodb
