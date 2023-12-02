@@ -119,4 +119,8 @@ psql -U christine -h localhost -p 4444
 
 select * from flag; - и так понятно
 
+# SQLITE (python jinja)
 
+sqlite3 db.sqlite
+
+.dump
