@@ -123,4 +123,6 @@ select * from flag; - и так понятно
 
 sqlite3 db.sqlite
 
+select * from User
+
 .dump
