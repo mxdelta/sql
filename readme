@@ -67,6 +67,8 @@ mysql --host=db --user=root --password=root cacti -e "select * from user_auth"
 
 mysql --user=root -p 
 
+select * from wp_users \G (в удобном виде)
+
 # Подключение к БД windows microsoft sql service (MSSQL)
 
 impacket-mssqlclient ARCHETYPE/sql_svc@10.129.21.3 -windows-auth
@@ -90,7 +92,7 @@ select TABLE_NAME from ScrambleHR.INFORMATION_SCHEMA.TABLES;
 
 select * from ScrambleHR.dbo.Employees; (выбрать все из таблицы ScramblerHR)
 
-
+select * from wp_users \G (в удобном виде)
 
 # mongodb
 mongo --port 27117 ace --eval "db.admin.find().forEach(printjson);"
@@ -108,6 +110,8 @@ show collections;
 show tables;
 
 db.{collect_name}.find().pretty();
+
+select * from wp_users \G (в удобном виде)
 
 # postgres
 
