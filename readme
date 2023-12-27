@@ -73,6 +73,9 @@ update wp_users set user_pass='$P$Bn.uHsPKseIJ4CdDVxOiQKmXFHrkC1.' where id=1;
 
 update (tables_name) set (column_password_nmae)='$P$Bn.uHsPKseIJ4CdDVxOiQKmXFHrkC1.' where id=1;
 
+# MySqlDUMP
+
+mysqldump -u theseus(user) -p Magic(datab)
 
 # Подключение к БД windows microsoft sql service (MSSQL)
 
