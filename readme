@@ -53,6 +53,8 @@ mysql -h 123.123.131.131 -u root -p
 
 mysql -u bolt_dba -p
 
+        запуск оболочки \! /bin/sh
+
 SHOW databases; : Prints out the databases we can access.
 USE {database_name}; : Set to use the database named {database_name}.
 SHOW tables; : Prints out the available tables inside the current
