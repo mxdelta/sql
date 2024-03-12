@@ -142,6 +142,12 @@ psql -U christine -h localhost -p 4444
 
 select * from flag; - и так понятно
 
+psql -h 192.168.135.7 -U postgres -W 'XzB.4fx4+LSHWsK' -d cats
+
+SELECT current_setting('is_superuser'); -- Проверка суперпользователя
+
+
+
 # SQLITE (python jinja)
 
 sqlite3 db.sqlite
