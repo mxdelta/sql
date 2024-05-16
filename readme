@@ -82,6 +82,8 @@ mysqldump -u theseus(user) -p Magic(datab)
 
 # Подключение к БД windows microsoft sql service (MSSQL)
 
+mssqlclient.py 'reporting:PcwTWTHRwryjc$c6'@10.10.10.125 -db volume -windows-auth
+
 impacket-mssqlclient ARCHETYPE/sql_svc@10.129.21.3 -windows-auth
 
 impacket-mssqlclient dc1.scrm.local -k (по керберосу)
