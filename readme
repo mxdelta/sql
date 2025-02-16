@@ -154,6 +154,10 @@ select * from User
 
 .dump
 
+
+
+select * from NOTE;
+
 # SQL I
     # Union based   
         search=example' ORDER BY 1 --
