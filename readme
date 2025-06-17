@@ -194,3 +194,6 @@ select * from NOTE;
 
     # Second-Order SQLi
         
+# No SQL injection
+
+https://notes.incendium.rocks/pentesting-notes/web/injection/cypher-injection
