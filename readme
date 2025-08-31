@@ -50,6 +50,8 @@ mysql --host=db --user=root --password=root cacti -e "select * from user_auth"
 
 mysql --user=root -p 
 
+mysql -u 'roundcube' -p'RCDBPass2025' roundcube -e "show tables; select * from users "
+
 select * from wp_users \G (в удобном виде)
 
 update wp_users set user_pass='$P$Bn.uHsPKseIJ4CdDVxOiQKmXFHrkC1.' where id=1;
